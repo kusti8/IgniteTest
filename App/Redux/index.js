@@ -1,14 +1,17 @@
 import { combineReducers } from 'redux'
 import configureStore from './CreateStore'
 import rootSaga from '../Sagas/'
+import {AsyncStorage} from 'react-native'
+import Immutable from 'seamless-immutable'
 
 export default () => {
   /* ------------- Assemble The Reducers ------------- */
   const rootReducer = combineReducers({
     nav: require('./NavigationRedux').reducer,
-    github: require('./GithubRedux').reducer,
-    search: require('./SearchRedux').reducer
+    list: require('./MainListRedux').reducer,
+    download: require('./DownloadRedux').reducer
   })
 
-  return configureStore(rootReducer, rootSaga)
+  s = configureStore(rootReducer, rootSaga)
+  return s
 }

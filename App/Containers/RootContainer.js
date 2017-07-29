@@ -3,6 +3,7 @@ import { View, StatusBar } from 'react-native'
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/StartupRedux'
+import MainListActions from '../Redux/MainListRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 
 // Styles
@@ -14,6 +15,7 @@ class RootContainer extends Component {
     if (!ReduxPersist.active) {
       this.props.startup()
     }
+
   }
 
   render () {
